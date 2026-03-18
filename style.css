@@ -4,8 +4,8 @@
     --bg-lighter: #0a0a0a;
     --text-main: #ffffff;
     --text-muted: #9b9696;
-    --accent-color: #e63946; /* Merah cerah untuk call to action */
-    --accent-hover: #ff4d5a;
+    --accent-color: #2ed573; /* Merah cerah untuk call to action */
+    --accent-hover: #7bed9f;
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Poppins', sans-serif;
     --transition: all 0.3s ease;
@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .preloader::after {
@@ -51,7 +51,7 @@ body {
     pointer-events: none;
     z-index: 9999;
     opacity: 0;
-    animation: scanlines-glitch 4s linear backwards;
+    animation: scanlines-glitch 2s linear backwards;
 }
 
 @keyframes scanlines-glitch {
@@ -424,7 +424,7 @@ body {
 }
 
 .spotify-wrapper {
-    box-shadow: 0 15px 45px rgba(0,0,0,0.6), 0 0 30px rgba(230, 57, 70, 0.15);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.6), 0 0 30px rgba(46, 213, 115, 0.15);
     border-radius: 12px;
     overflow: hidden;
     transition: var(--transition);
@@ -439,15 +439,15 @@ body {
     position: absolute;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(230, 57, 70, 0.1) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(46, 213, 115, 0.1) 0%, transparent 60%);
     opacity: 0;
     transition: var(--transition);
     pointer-events: none;
 }
 .spotify-wrapper:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 55px rgba(0,0,0,0.8), 0 0 50px rgba(230, 57, 70, 0.35);
-    border-color: rgba(230, 57, 70, 0.4);
+    box-shadow: 0 20px 55px rgba(0,0,0,0.8), 0 0 50px rgba(46, 213, 115, 0.35);
+    border-color: rgba(46, 213, 115, 0.4);
 }
 .spotify-wrapper:hover::before {
     opacity: 1;
