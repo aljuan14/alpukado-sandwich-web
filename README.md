@@ -1,9 +1,5 @@
 # Avocado Sandwich | Official Band Website
 
-Selamat datang di repositori resmi untuk website Avocado Sandwich. Platform ini dirancang untuk merepresentasikan identitas band melalui antarmuka modern dan interaktif dengan estetika glitch premium serta desain yang sepenuhnya responsif.
-
-Live Website: https://aljuan14.github.io/alpukado-sandwich-web/
-
 ## Fitur Utama
 
 1. **Glitch Preloader**
