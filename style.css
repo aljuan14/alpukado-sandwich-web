@@ -234,6 +234,34 @@ body {
     box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001; /* di atas menu nav-links */
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    transition: var(--transition);
+    border-radius: 3px;
+    display: block;
+}
+
+/* Animasi burger menjadi X (cross) */
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
 /* ================= HERO SECTION ================= */
 .hero {
     height: 100vh;
@@ -574,17 +602,46 @@ footer p {
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
     .hero-title { font-size: 4rem; }
-    .nav-links { display: none; /* Cukup sederhana untuk saat ini */ }
-    .thumbnail-container { flex-wrap: wrap; }
+    .hero-subtitle { font-size: 1.3rem; }
+    .hamburger { display: flex; }
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: rgba(5, 5, 5, 0.98);
+        backdrop-filter: blur(15px);
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        transition: 0.4s ease-in-out;
+        justify-content: center;
+        z-index: 1000;
+        padding-top: 60px;
+    }
+    .nav-links.active { left: 0; }
+    .nav-links li { margin: 25px 0; }
+    .nav-links li a { font-size: 1.5rem; }
+    .cta-btn { display: none; }
+    .thumbnails-container { flex-wrap: wrap; }
     .section-title { font-size: 2.5rem; }
+    .gallery-section, .music-section, .video-section { padding: 80px 30px; }
+    #navbar { padding: 20px 30px; }
+    #navbar.scrolled { padding: 15px 30px; }
 }
 
 @media (max-width: 768px) {
-    .glitch { font-size: 3rem; }
-    .hero-title { font-size: 3rem; margin-top: 50px; }
+    .glitch { font-size: 2.5rem; letter-spacing: 2px; }
+    .hero-title { font-size: 3rem; margin-top: 60px; letter-spacing: 3px; }
+    .hero-subtitle { font-size: 1.1rem; margin-bottom: 30px; }
+    .explore-btn { padding: 15px 30px; font-size: 1rem; }
     .main-image-container { height: 400px; }
-    .thumb-wrapper { width: 90px; height: 60px; }
+    .thumb-wrapper { width: 80px; height: 55px; }
     .cta-btn { display: none; }
+    .logo { font-size: 1.5rem; }
+    .section-title { font-size: 2rem; margin-bottom: 40px; }
+    .section-title span { font-size: 1.5rem; }
+    .video-grid-container { grid-template-columns: 1fr; }
     
     .floating-socials {
         top: auto;
@@ -600,4 +657,28 @@ footer p {
     }
     .social-icon { background: transparent; border: none; width: 40px; height: 40px; }
     .social-icon:hover { transform: scale(1.1) translateY(-5px); }
+}
+
+@media (max-width: 480px) {
+    .glitch { font-size: 2rem; letter-spacing: 1px; }
+    .hero-title { font-size: 2.5rem; margin-top: 70px; letter-spacing: 1px; }
+    .hero-subtitle { font-size: 1rem; margin-bottom: 30px; padding: 0 10px; }
+    .gallery-section, .music-section, .video-section { padding: 60px 20px; }
+    #navbar { padding: 15px 20px; }
+    #navbar.scrolled { padding: 10px 20px; }
+    .nav-container { justify-content: space-between; } /* Logo kiri, burger kanan */
+    .logo { font-size: 1.3rem; }
+    .section-title { font-size: 1.8rem; margin-bottom: 30px; }
+    .section-title span { font-size: 1.2rem; }
+    .main-image-container { height: 300px; }
+    .thumb-wrapper { width: 60px; height: 40px; }
+    .thumbnails-container { gap: 10px; }
+    .nav-arrow { padding: 10px 15px; font-size: 1.5rem; }
+    .video-grid-container { grid-template-columns: 1fr; gap: 20px; }
+    footer { padding: 40px 20px 80px 20px; } /* Tambah padding bawah untuk floating socials */
+    .floating-socials {
+        bottom: 15px;
+        padding: 5px 10px;
+    }
+    .social-icon { width: 35px; height: 35px; font-size: 1.2rem; }
 }

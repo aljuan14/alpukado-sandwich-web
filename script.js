@@ -28,7 +28,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ----------------------------------------------------
-    // 3. INTERACTIVE GALLERY LOGIC
+    // 3. BURGER MENU LOGIC
+    // ----------------------------------------------------
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('.nav-links li a');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            // Mencegah scroll pada body saat menu terbuka
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Tutup menu saat salah satu link diklik
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // ----------------------------------------------------
+    // 4. INTERACTIVE GALLERY LOGIC
     // ----------------------------------------------------
     // Daftar gambar placeholder berkualitas tinggi dari Unsplash untuk suasana konser
     const galleryImages = [
