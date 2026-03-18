@@ -3,12 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. PRELOADER LOGIC
     // ----------------------------------------------------
     const preloader = document.getElementById('preloader');
-    // Stagger span lama telah dihapus karena menggunakan efek class glitch pada HTML baru
+    const preloaderText = document.querySelector('.preloader-text');
 
-    // Menghilangkan preloader setelah beberapa detik
-    setTimeout(() => {
-        preloader.classList.add('hidden');
-    }, 4000); // 4 detik agar sesuai dengan efek glitch yang terjadi pada 2 detik terakhir
+    // Menunggu font kustom (Google Fonts) di-download sebelum memulai presloader
+    document.fonts.ready.then(() => {
+        if (preloaderText) preloaderText.classList.add('fonts-loaded');
+        
+        // Menghilangkan preloader 4 detik setelah font muncul
+        setTimeout(() => {
+            if (preloader) preloader.classList.add('hidden');
+        }, 4000);
+    });
 
     // ----------------------------------------------------
     // 2. STICKY NAVBAR LOGIC
