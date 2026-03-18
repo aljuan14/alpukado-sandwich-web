@@ -3,17 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. PRELOADER LOGIC
     // ----------------------------------------------------
     const preloader = document.getElementById('preloader');
-    const spans = document.querySelectorAll('.preloader-text span');
-
-    // Memberikan penundaan stagger untuk animasi huruf "Avocado Sandwich"
-    spans.forEach((span, index) => {
-        span.style.animationDelay = `${index * 0.1}s`;
-    });
+    // Stagger span lama telah dihapus karena menggunakan efek class glitch pada HTML baru
 
     // Menghilangkan preloader setelah beberapa detik
     setTimeout(() => {
         preloader.classList.add('hidden');
-    }, 2800); // 2.8 detik untuk menampilkan dengan megah nama band
+    }, 4000); // 4 detik agar sesuai dengan efek glitch yang terjadi pada 2 detik terakhir
 
     // ----------------------------------------------------
     // 2. STICKY NAVBAR LOGIC
@@ -32,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
     // Daftar gambar placeholder berkualitas tinggi dari Unsplash untuk suasana konser
     const galleryImages = [
-        'assets/gallery/gallery.jpeg', // Main
+        'assets/gallery/gallery.JPG', // Main
         'assets/gallery/gallery 1.JPG', // Stage
         'assets/gallery/gallery2.JPG', // Guitar
-        'assets/gallery/gallery 3.jpeg', // Singer
+        'assets/gallery/gallery3.jpeg', // Singer
         'assets/gallery/gallery 4.jpeg'  // Drums
     ];
 
