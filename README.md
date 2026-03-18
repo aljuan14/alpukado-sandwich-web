@@ -1,8 +1,8 @@
-# Avocado Sandwich | Official Band Website 🥑🎸
+# Avocado Sandwich | Official Band Website
 
 Selamat datang di repositori resmi untuk website **Avocado Sandwich**! Website ini dirancang khusus untuk merepresentasikan band dengan tampilan modern, interaktif, dan sentuhan efek *cyberpunk/glitch* premium pada halaman masuk (preloader) yang berkesan.
 
-## 🌟 Fitur Utama (Features)
+## Fitur Utama (Features)
 
 1. **Extreme Glitch Preloader**
    Dilengkapi dengan animasi *broken CRT TV* dan teks *tearing* (RGB split merah/biru) yang agresif menggunakan teknik CSS `clip-path` tingkat lanjut, dengan tambahan *overlay* garis putus (scanlines).
@@ -17,14 +17,14 @@ Selamat datang di repositori resmi untuk website **Avocado Sandwich**! Website i
 6. **YouTube Video Grid**
    Tampilan daftar putar *music video* yang tertata dengan apik menggunakan kontainer grid responsif yang dapat menyesuaikan berbagai ukuran layar otomatis.
 
-## 🛠️ Bahasa & Teknologi (Tech Stack)
+## Bahasa & Teknologi (Tech Stack)
 
 Website ini adalah website statis yang murni (native) dibuat tanpa *framework* yang berat, sehingga **sangat ringan dan cepat diakses**:
 - **HTML5** (Semantik Murni)
 - **CSS3** (Variabel CSS, Animasi Keyframes kompleks, Grid/Flexbox)
 - **Vanilla JavaScript** (ES6+ interaktivitas untuk navigasi, galeri, preloader)
 
-## 🚀 Cara Menjalankan Proyek (How to Run)
+## Cara Menjalankan Proyek (How to Run)
 
 Karena ini adalah proyek berbasis **Native HTML**, Anda **tidak perlu menginstal** hal-hal rumit seperti Node.js atau Composer.
 
@@ -34,7 +34,7 @@ Karena ini adalah proyek berbasis **Native HTML**, Anda **tidak perlu menginstal
 
 Untuk pengalaman pengembangan terbaik (*development*), Anda dapat menggunakan ekstensi **Live Server** di Visual Studio Code.
 
-## 📂 Struktur Direktori
+## Struktur Direktori
 
 ```text
 alpukado-web/
@@ -49,7 +49,7 @@ alpukado-web/
 └── script.js (Logika fungsionalitas & iterasi frontend)
 ```
 
-## 🎨 Modifikasi Tema (Theming)
+## Modifikasi Tema (Theming)
 
 Jika Anda ingin mengubah skema warna, bisa dengan sangat mudah dilakukan. Buka file `style.css` pada bagian `:root` dan sesuaikan nilainya:
 ```css
@@ -61,4 +61,4 @@ Jika Anda ingin mengubah skema warna, bisa dengan sangat mudah dilakukan. Buka f
 ```
 
 ---
-*Dibuat khusus untuk Avocado Sandwich.* ✨
+*Dibuat khusus untuk Avocado Sandwich.*
