@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,11 @@
     <!-- Google Fonts untuk tipografi modern dan tegas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Preloader -->
     <div id="preloader" class="preloader">
@@ -24,7 +28,7 @@
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="icon">🎸</span> Avocado Sandwich
+                <span class="icon"></span> Avocado Sandwich
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
@@ -40,9 +44,25 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">THE BIGGEST<br>MUSIC EVENT OF<br>THE YEAR</h1>
-            <p class="hero-subtitle">The biggest music event in decades. Attended by more than 100 musicians from all over the world. Get your ticket now!</p>
+            <h1 class="hero-title">aVOCADO<br>SANDWICH</h1>
+            <p class="hero-subtitle">Every beat is a memory. Welcome to our creative sanctuary.</p>
             <a href="#gallery" class="explore-btn">Explore Gallery</a>
+        </div>
+    </section>
+
+
+    <!-- Music / Spotify Section -->
+    <section id="music" class="music-section">
+        <div class="music-content">
+            <h2 class="section-title"><span>05</span> LATEST TRACKS</h2>
+            <div class="spotify-wrapper">
+                <!-- Spotify Player - Artist Link -->
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/artist/0pxlV8qkFzAsnCZ0W5D3Ll?utm_source=generator&theme=0"
+                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
         </div>
     </section>
 
@@ -53,7 +73,7 @@
             <div class="main-image-container">
                 <button class="nav-arrow prev-arrow" id="prevBtn">&#10094;</button>
                 <!-- Gambar Utama (berubah sesuai klik thumbnail) -->
-                <img id="main-gallery-img" src="https://images.unsplash.com/photo-1540039155733-d71efd544026?q=80&w=1200&auto=format&fit=crop" alt="Band Performance Main">
+                <img id="main-gallery-img" src="assets/gallery/gallery.jpeg" alt="Band Performance Main">
                 <button class="nav-arrow next-arrow" id="nextBtn">&#10095;</button>
             </div>
             <!-- Container Thumbnail untuk JS -->
@@ -61,23 +81,39 @@
         </div>
     </section>
 
-    <!-- Music / Spotify Section -->
-    <section id="music" class="music-section">
-        <div class="music-content">
-            <h2 class="section-title"><span>05</span> LATEST TRACKS</h2>
-            <div class="spotify-wrapper">
-                <!-- Placeholder iframe Spotify (Korn sebagai contoh metal/rock band) -->
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdChJ6N1Zt1u?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- Video / YouTube Section -->
     <section id="video" class="video-section">
         <h2 class="section-title"><span>06</span> MUSIC VIDEO</h2>
-        <div class="video-wrapper">
-            <!-- Placeholder Youtube (Never gonna give you up) -->
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=cI2HlAte7HwP-x27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <div class="video-grid-container">
+            <!-- Video 1 -->
+            <div class="video-grid-item">
+                <iframe src="https://www.youtube.com/embed/K4DyBUG242c" title="YouTube video player 1" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <!-- Video 2 -->
+            <div class="video-grid-item">
+                <iframe src="https://www.youtube.com/embed/bM7SZ5SBzyY" title="YouTube video player 2" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <!-- Video 3 -->
+            <div class="video-grid-item">
+                <iframe src="https://www.youtube.com/embed/AOeY-nDp7hI" title="YouTube video player 3" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <!-- Video 4 -->
+            <div class="video-grid-item">
+                <iframe src="https://www.youtube.com/embed/n4tK7LYFxI0" title="YouTube video player 4" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="view-more-container">
+            <a href="#" class="view-more-link">view more &rsaquo;</a>
         </div>
     </section>
 
@@ -91,4 +127,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

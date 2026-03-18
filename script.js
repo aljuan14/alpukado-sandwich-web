@@ -32,12 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
     // Daftar gambar placeholder berkualitas tinggi dari Unsplash untuk suasana konser
     const galleryImages = [
-        'https://images.unsplash.com/photo-1540039155733-d71efd544026?q=80&w=1200&auto=format&fit=crop', // Main
-        'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1200&auto=format&fit=crop', // Stage
-        'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1200&auto=format&fit=crop', // Guitar
-        'https://images.unsplash.com/photo-1493225457124-a1a2a5f5cb39?q=80&w=1200&auto=format&fit=crop', // Singer
-        'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1200&auto=format&fit=crop',  // Drums
-        'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1200&auto=format&fit=crop'   // Crowd
+        'assets/gallery/gallery.jpeg', // Main
+        'assets/gallery/gallery 1.JPG', // Stage
+        'assets/gallery/gallery2.JPG', // Guitar
+        'assets/gallery/gallery 3.jpeg', // Singer
+        'assets/gallery/gallery 4.jpeg'  // Drums
     ];
 
     let currentImgIndex = 0;
