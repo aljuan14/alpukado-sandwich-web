@@ -1,6 +1,8 @@
 # Avocado Sandwich | Official Band Website
 
-Selamat datang di repositori resmi untuk website **Avocado Sandwich**! Website ini dirancang khusus untuk merepresentasikan band dengan tampilan modern, interaktif, dan sentuhan efek *cyberpunk/glitch* premium pada halaman masuk (preloader) yang berkesan.
+Selamat datang di repositori resmi untuk website **Avocado Sandwich**! Website ini dirancang khusus untuk merepresentasikan band dengan tampilan modern, interaktif, dan sentuhan efek *cyberpunk/glitch* premium pada halaman masuk (preloader).
+
+🌍 **Live Website:** [aljuan14.github.io/alpukado-sandwich-web/](https://aljuan14.github.io/alpukado-sandwich-web/)
 
 ## Fitur Utama (Features)
 
