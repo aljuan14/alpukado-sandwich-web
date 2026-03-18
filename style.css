@@ -3,7 +3,7 @@
     --bg-color: #050505;
     --bg-lighter: #0a0a0a;
     --text-main: #ffffff;
-    --text-muted: #a0a0a0;
+    --text-muted: #9b9696;
     --accent-color: #e63946; /* Merah cerah untuk call to action */
     --accent-hover: #ff4d5a;
     --font-heading: 'Oswald', sans-serif;
@@ -165,7 +165,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(5,5,5,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 70%, rgba(5,5,5,1) 100%);
 }
 
 .hero-content {
@@ -177,7 +177,7 @@ body {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 5.5rem;
+    font-size: 6rem;
     line-height: 1.05;
     letter-spacing: 6px;
     text-transform: uppercase;
@@ -188,8 +188,9 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     color: var(--text-muted);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     margin-bottom: 45px;
     line-height: 1.6;
     animation: fadeIn 1s ease 1.5s forwards;

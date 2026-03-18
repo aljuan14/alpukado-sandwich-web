@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
     const preloader = document.getElementById('preloader');
     const spans = document.querySelectorAll('.preloader-text span');
-    
+
     // Memberikan penundaan stagger untuk animasi huruf "Avocado Sandwich"
     spans.forEach((span, index) => {
         span.style.animationDelay = `${index * 0.1}s`;
@@ -55,17 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = src;
         img.alt = `Avocado Sandwich Gallery Image ${index + 1}`;
         img.loading = "lazy";
-        
+
         wrapper.appendChild(img);
         thumbnailsContainer.appendChild(wrapper);
     });
 
     const updateGallery = (index) => {
         currentImgIndex = index;
-        
+
         // Transisi pergantian gambar galeri utama
         mainImg.style.opacity = 0;
-        
+
         setTimeout(() => {
             mainImg.src = galleryImages[currentImgIndex];
             mainImg.style.opacity = 1;
