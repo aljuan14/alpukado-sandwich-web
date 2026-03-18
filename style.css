@@ -609,8 +609,16 @@ footer p {
         left: -100%;
         top: 0;
         flex-direction: column;
-        background-color: rgba(5, 5, 5, 0.98);
+        
+        /* 1. Tambahkan warna semi-transparan (Hitam atau Putih) */
+        background-color: rgba(0, 0, 0, 0.6); /* Hitam dengan opacity 60% */
+        /* ATAU jika ingin tema terang: */
+        /* background-color: rgba(255, 255, 255, 0.7); */ 
+
+        /* 2. Backdrop filter membuat efek kaca buram */
         backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px); /* Dukungan Safari */
+        
         width: 100vw;
         height: 100vh;
         text-align: center;
