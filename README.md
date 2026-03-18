@@ -1,66 +1,67 @@
 # Avocado Sandwich | Official Band Website
 
-Selamat datang di repositori resmi untuk website **Avocado Sandwich**! Website ini dirancang khusus untuk merepresentasikan band dengan tampilan modern, interaktif, dan sentuhan efek *cyberpunk/glitch* premium pada halaman masuk (preloader).
+Selamat datang di repositori resmi untuk website Avocado Sandwich. Platform ini dirancang untuk merepresentasikan identitas band melalui antarmuka modern dan interaktif dengan estetika glitch premium serta desain yang sepenuhnya responsif.
 
-🌍 **Live Website:** [aljuan14.github.io/alpukado-sandwich-web/](https://aljuan14.github.io/alpukado-sandwich-web/)
+Live Website: https://aljuan14.github.io/alpukado-sandwich-web/
 
-## Fitur Utama (Features)
+## Fitur Utama
 
-1. **Extreme Glitch Preloader**
-   Dilengkapi dengan animasi *broken CRT TV* dan teks *tearing* (RGB split merah/biru) yang agresif menggunakan teknik CSS `clip-path` tingkat lanjut, dengan tambahan *overlay* garis putus (scanlines).
-2. **Desain Menawan & Responsif**
-   Tampilan berkelas menggunakan skema warna gelap (*dark mode*) dengan aksen merah cerah (`--accent-color`). Teks menonjol menggunakan perpaduan Google Font *Oswald* dan *Poppins*.
-3. **Sticky Navigation Bar**
-   Menu bagian atas yang otomatis menempel dan menambahkan efek blur (kaca mika) saat halaman di-*scroll* ke bawah.
-4. **Spotify Integration**
-   Tersedia pemutar lagu langsung (*iframe*) dari artis Avocado Sandwich, memungkinkan pengunjung memutar *latest tracks* tanpa harus keluar website.
-5. **Interactive Photo Gallery**
-   Galeri foto khusus menggunakan native JavaScript. Klik gambar pratinjau (thumbnail) untuk melihat foto besar dengan transisi yang halus.
-6. **YouTube Video Grid**
-   Tampilan daftar putar *music video* yang tertata dengan apik menggunakan kontainer grid responsif yang dapat menyesuaikan berbagai ukuran layar otomatis.
+1. **Glitch Preloader**
+   Preloader CSS tingkat lanjut yang menampilkan animasi glitch gaya layar CRT dan efek pemisahan warna RGB (red/blue) menggunakan teknik modern clip-path.
 
-## Bahasa & Teknologi (Tech Stack)
+2. **Desain Visual Responsif**
+   Antarmuka bertema gelap (*dark mode*) dengan aksen warna yang kontras, dioptimalkan untuk memberikan dampak visual tinggi di berbagai ukuran layar perangkat.
 
-Website ini adalah website statis yang murni (native) dibuat tanpa *framework* yang berat, sehingga **sangat ringan dan cepat diakses**:
-- **HTML5** (Semantik Murni)
-- **CSS3** (Variabel CSS, Animasi Keyframes kompleks, Grid/Flexbox)
-- **Vanilla JavaScript** (ES6+ interaktivitas untuk navigasi, galeri, preloader)
+3. **Navigasi Multi-Platform**
+   Bilah navigasi berbasis *glassmorphism* yang menempel (sticky) dan bertransisi secara halus saat digulir, dilengkapi dengan menu hamburger khusus untuk aksesibilitas perangkat seluler.
 
-## Cara Menjalankan Proyek (How to Run)
+4. **Integrasi Media**
+   * **Spotify:** Pemutar lagu bawaan untuk akses langsung ke karya lagu terbaru tanpa harus meninggalkan situs.
+   * **YouTube:** Grid video responsif yang tertata rapi untuk pemutaran video musik berkualitas tinggi di perangkat manapun.
 
-Karena ini adalah proyek berbasis **Native HTML**, Anda **tidak perlu menginstal** hal-hal rumit seperti Node.js atau Composer.
+5. **Galeri Foto Interaktif**
+   Galeri gambar kustom menggunakan JavaScript murni (vanilla) untuk memastikan transisi yang ringan dan halus serta pemuatan gambar yang optimal.
 
-1. Buka folder proyek ini (`alpukado-web`).
-2. Klik ganda pada file `index.html`.
-3. Website akan langsung terbuka sempurna di web browser default Anda!
+## Teknologi (Tech Stack)
 
-Untuk pengalaman pengembangan terbaik (*development*), Anda dapat menggunakan ekstensi **Live Server** di Visual Studio Code.
+Proyek ini dibuat menggunakan teknologi web murni untuk memastikan performa yang cepat dan beban yang ringan:
+- HTML5 (Semantik dan optimasi SEO)
+- CSS3 (Custom properties, animasi keyframe, Flexbox, dan Grid)
+- Vanilla JavaScript (Modern ES6+ untuk seluruh interaksi dinamis)
 
-## Struktur Direktori
+## Memulai (Getting Started)
+
+Sebagai proyek berbasis native HTML, tidak diperlukan dependensi eksternal atau alat bantu pengembangan tambahan.
+
+1. Salin atau unduh repositori ini.
+2. Buka file `index.html` menggunakan peramban web modern manapun.
+
+Untuk pengalaman pengembangan terbaik, disarankan menggunakan server lokal (seperti ekstensi Live Server pada VS Code).
+
+## Struktur Proyek
 
 ```text
 alpukado-web/
 ├── assets/
-│   ├── fonts/
-│   ├── gallery/ (Berisi aset gambar band)
-│   ├── logo.png (Gambar logo asli)
-│   ├── favicon.png (Logo yang telah dicrop)
-│   └── fotoband.png (Gambar utama latar belakang)
-├── index.html (Halaman utama website)
-├── style.css (Kode lengkap styling & animasi desain)
-└── script.js (Logika fungsionalitas & iterasi frontend)
+│   ├── gallery/ (Aset fotografi band)
+│   ├── favicon.png (Ikon situs)
+│   └── fotoband.png (Latar belakang utama hero section)
+├── index.html (Halaman utama)
+├── style.css (Kode lengkap styling dan animasi)
+└── script.js (Logika interaktif dan fungsionalitas galeri)
 ```
 
-## Modifikasi Tema (Theming)
+## Kustomisasi Tema
 
-Jika Anda ingin mengubah skema warna, bisa dengan sangat mudah dilakukan. Buka file `style.css` pada bagian `:root` dan sesuaikan nilainya:
+Untuk mengubah skema warna utama atau variabel desain, Anda dapat memperbarui bagian `:root` di dalam file `style.css`:
+
 ```css
 :root {
     --bg-color: #050505;
     --text-main: #ffffff;
-    --accent-color: #e63946; /* Ubah ini untuk warna kustom lain */
+    --accent-color: #2ed573;
 }
 ```
 
 ---
-*Dibuat khusus untuk Avocado Sandwich.*
+Portofolio Proyek Resmi Avocado Sandwich.
