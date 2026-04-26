@@ -4,16 +4,23 @@
     --bg-lighter: #0a0a0a;
     --text-main: #ffffff;
     --text-muted: #9b9696;
-    --accent-color: #2ed573; /* Merah cerah untuk call to action */
+    --accent-color: #2ed573;
+    /* Merah cerah untuk call to action */
     --accent-hover: #7bed9f;
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Poppins', sans-serif;
     --transition: all 0.3s ease;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: var(--bg-color);
@@ -40,14 +47,15 @@ body {
 .preloader::after {
     content: "";
     position: absolute;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0,0,0,0.15),
-        rgba(0,0,0,0.15) 1px,
-        transparent 1px,
-        transparent 2px
-    );
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px,
+            transparent 2px);
     pointer-events: none;
     z-index: 9999;
     opacity: 0;
@@ -55,10 +63,21 @@ body {
 }
 
 @keyframes scanlines-glitch {
-    0%, 50% { opacity: 0; }
-    51%, 55%, 59%, 63%, 67%, 71%, 75%, 79%, 83%, 87%, 91%, 95%, 99% { opacity: 1; }
-    53%, 57%, 61%, 65%, 69%, 73%, 77%, 81%, 85%, 89%, 93%, 97% { opacity: 0.5; }
-    100% { opacity: 0; }
+    0%, 50% {
+        opacity: 0;
+    }
+
+    51%, 55%, 59%, 63%, 67%, 71%, 75%, 79%, 83%, 87%, 91%, 95%, 99% {
+        opacity: 1;
+    }
+
+    53%, 57%, 61%, 65%, 69%, 73%, 77%, 81%, 85%, 89%, 93%, 97% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .preloader.hidden {
@@ -71,38 +90,62 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    opacity: 0; 
+    opacity: 0;
 }
 
 .preloader-text.fonts-loaded {
-    animation: textFadeIn 0.4s ease-out forwards;
+    animation: textFadeIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 @keyframes textFadeIn {
-    to { opacity: 1; }
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .glitch {
     position: relative;
     font-family: var(--font-heading);
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     color: var(--text-main);
     line-height: 1;
-    animation: main-text-jitter 4s steps(1) infinite;
+    animation: simpleGlitch 3s ease-in-out infinite;
 }
 
-@keyframes main-text-jitter {
-    0%, 50% { transform: translate(0); text-shadow: none; filter: none; }
-    51%, 63%, 75%, 87%, 99% { transform: translate(4px, -2px); text-shadow: 4px 0 red, -4px 0 blue; filter: contrast(1.5); }
-    53%, 65%, 77%, 89% { transform: translate(-4px, 2px); }
-    55%, 67%, 79%, 91% { transform: translate(6px, 0); }
-    57%, 69%, 81%, 93% { transform: translate(-6px, 0); }
-    59%, 71%, 83%, 95% { transform: translate(0, 4px); text-shadow: -4px 0 lime, 4px 0 magenta; }
-    61%, 73%, 85%, 97% { transform: translate(0, -4px); }
-    100% { transform: translate(0); text-shadow: none; filter: none; }
+@keyframes simpleGlitch {
+    0%, 100% {
+        transform: translate(0);
+        text-shadow: -2px 0 #2ed573, 2px 0 rgba(46, 213, 115, 0.3);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+        text-shadow: -2px 0 #2ed573, 2px 0 rgba(46, 213, 115, 0.5);
+    }
+
+    40% {
+        transform: translate(2px, -2px);
+        text-shadow: 2px 0 #2ed573, -2px 0 rgba(46, 213, 115, 0.3);
+    }
+
+    60% {
+        transform: translate(-1px, 1px);
+        text-shadow: -2px 0 #2ed573, 2px 0 rgba(46, 213, 115, 0.4);
+    }
+
+    80% {
+        transform: translate(1px, -1px);
+        text-shadow: 2px 0 #2ed573, -2px 0 rgba(46, 213, 115, 0.3);
+    }
 }
 
 .glitch::before,
@@ -132,25 +175,103 @@ body {
 }
 
 @keyframes extreme-glitch-1 {
-    0%, 50% { opacity: 0; clip-path: inset(0 0 0 0); transform: translate(0); }
-    51%, 63%, 75%, 87%, 99% { opacity: 1; clip-path: inset(10% 0 60% 0); transform: translate(-20px, 0); }
-    53%, 65%, 77%, 89% { opacity: 1; clip-path: inset(80% 0 5% 0); transform: translate(35px, 0); }
-    55%, 67%, 79%, 91% { opacity: 1; clip-path: inset(30% 0 40% 0); transform: translate(-15px, 0); }
-    57%, 69%, 81%, 93% { opacity: 1; clip-path: inset(60% 0 20% 0); transform: translate(45px, 0); }
-    59%, 71%, 83%, 95% { opacity: 1; clip-path: inset(15% 0 70% 0); transform: translate(-30px, 0); }
-    61%, 73%, 85%, 97% { opacity: 1; clip-path: inset(40% 0 30% 0); transform: translate(25px, 0); }
-    100% { opacity: 0; clip-path: inset(0 0 0 0); transform: translate(0); }
+    0%, 50% {
+        opacity: 0;
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    51%, 63%, 75%, 87%, 99% {
+        opacity: 1;
+        clip-path: inset(10% 0 60% 0);
+        transform: translate(-20px, 0);
+    }
+
+    53%, 65%, 77%, 89% {
+        opacity: 1;
+        clip-path: inset(80% 0 5% 0);
+        transform: translate(35px, 0);
+    }
+
+    55%, 67%, 79%, 91% {
+        opacity: 1;
+        clip-path: inset(30% 0 40% 0);
+        transform: translate(-15px, 0);
+    }
+
+    57%, 69%, 81%, 93% {
+        opacity: 1;
+        clip-path: inset(60% 0 20% 0);
+        transform: translate(45px, 0);
+    }
+
+    59%, 71%, 83%, 95% {
+        opacity: 1;
+        clip-path: inset(15% 0 70% 0);
+        transform: translate(-30px, 0);
+    }
+
+    61%, 73%, 85%, 97% {
+        opacity: 1;
+        clip-path: inset(40% 0 30% 0);
+        transform: translate(25px, 0);
+    }
+
+    100% {
+        opacity: 0;
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
 }
 
 @keyframes extreme-glitch-2 {
-    0%, 50% { opacity: 0; clip-path: inset(0 0 0 0); transform: translate(0); }
-    52%, 64%, 76%, 88% { opacity: 1; clip-path: inset(35% 0 25% 0); transform: translate(25px, 0); }
-    54%, 66%, 78%, 90% { opacity: 1; clip-path: inset(75% 0 10% 0); transform: translate(-40px, 0); }
-    56%, 68%, 80%, 92% { opacity: 1; clip-path: inset(20% 0 55% 0); transform: translate(30px, 0); }
-    58%, 70%, 82%, 94% { opacity: 1; clip-path: inset(55% 0 35% 0); transform: translate(-20px, 0); }
-    60%, 72%, 84%, 96% { opacity: 1; clip-path: inset(5% 0 85% 0); transform: translate(45px, 0); }
-    62%, 74%, 86%, 98% { opacity: 1; clip-path: inset(45% 0 45% 0); transform: translate(-35px, 0); }
-    100% { opacity: 0; clip-path: inset(0 0 0 0); transform: translate(0); }
+    0%, 50% {
+        opacity: 0;
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
+
+    52%, 64%, 76%, 88% {
+        opacity: 1;
+        clip-path: inset(35% 0 25% 0);
+        transform: translate(25px, 0);
+    }
+
+    54%, 66%, 78%, 90% {
+        opacity: 1;
+        clip-path: inset(75% 0 10% 0);
+        transform: translate(-40px, 0);
+    }
+
+    56%, 68%, 80%, 92% {
+        opacity: 1;
+        clip-path: inset(20% 0 55% 0);
+        transform: translate(30px, 0);
+    }
+
+    58%, 70%, 82%, 94% {
+        opacity: 1;
+        clip-path: inset(55% 0 35% 0);
+        transform: translate(-20px, 0);
+    }
+
+    60%, 72%, 84%, 96% {
+        opacity: 1;
+        clip-path: inset(5% 0 85% 0);
+        transform: translate(45px, 0);
+    }
+
+    62%, 74%, 86%, 98% {
+        opacity: 1;
+        clip-path: inset(45% 0 45% 0);
+        transform: translate(-35px, 0);
+    }
+
+    100% {
+        opacity: 0;
+        clip-path: inset(0 0 0 0);
+        transform: translate(0);
+    }
 }
 
 /* ================= NAVIGASI ================= */
@@ -172,7 +293,7 @@ body {
     background: rgba(5, 5, 5, 0.85);
     backdrop-filter: blur(15px);
     padding: 20px 50px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-container {
@@ -192,7 +313,10 @@ body {
     align-items: center;
     gap: 10px;
 }
-.logo .icon { color: var(--accent-color); }
+
+.logo .icon {
+    color: var(--accent-color);
+}
 
 .nav-links {
     display: flex;
@@ -239,7 +363,8 @@ body {
     cursor: pointer;
     flex-direction: column;
     gap: 6px;
-    z-index: 1001; /* di atas menu nav-links */
+    z-index: 1001;
+    /* di atas menu nav-links */
 }
 
 .hamburger .bar {
@@ -255,9 +380,11 @@ body {
 .hamburger.active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
+
 .hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
+
 .hamburger.active .bar:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
 }
@@ -272,7 +399,7 @@ body {
     align-items: center;
     text-align: center;
     /* Menggunakan aset gambar fotoband pengguna */
-    background: url('assets/fotoband.png') no-repeat center center/cover;
+    background: url('assets/atap.JPG') no-repeat center center/cover;
 }
 
 .hero-overlay {
@@ -281,7 +408,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 70%, rgba(5,5,5,1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(5, 5, 5, 1) 100%);
 }
 
 .hero-content {
@@ -336,9 +463,25 @@ body {
     transform: translateY(-3px);
 }
 
-@keyframes fadeInDown { to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { to { opacity: 1; } }
-@keyframes fadeInUpBtn { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUpBtn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* ================= BAGIAN UMUM (SECTION) ================= */
 .section-title {
@@ -348,7 +491,8 @@ body {
     letter-spacing: 5px;
     margin-bottom: 60px;
     text-transform: uppercase;
-    color: #444; /* Efek gelap untuk teks di belakang */
+    color: #444;
+    /* Efek gelap untuk teks di belakang */
     position: relative;
     z-index: 1;
 }
@@ -378,7 +522,7 @@ body {
     margin-bottom: 25px;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
 }
 
 .main-image-container img {
@@ -392,7 +536,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     font-size: 2.5rem;
@@ -407,8 +551,17 @@ body {
     background: var(--accent-color);
 }
 
-.prev-arrow { left: 0; border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
-.next-arrow { right: 0; border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
+.prev-arrow {
+    left: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.next-arrow {
+    right: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
 
 .thumbnails-container {
     display: flex;
@@ -455,31 +608,36 @@ body {
 }
 
 .spotify-wrapper {
-    box-shadow: 0 15px 45px rgba(0,0,0,0.6), 0 0 30px rgba(46, 213, 115, 0.15);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(46, 213, 115, 0.15);
     border-radius: 12px;
     overflow: hidden;
     transition: var(--transition);
     max-width: 650px;
     margin: 0 auto;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     background: linear-gradient(145deg, #111, #000);
     position: relative;
 }
+
 .spotify-wrapper::before {
     content: '';
     position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
     background: radial-gradient(circle, rgba(46, 213, 115, 0.1) 0%, transparent 60%);
     opacity: 0;
     transition: var(--transition);
     pointer-events: none;
 }
+
 .spotify-wrapper:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 55px rgba(0,0,0,0.8), 0 0 50px rgba(46, 213, 115, 0.35);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.8), 0 0 50px rgba(46, 213, 115, 0.35);
     border-color: rgba(46, 213, 115, 0.4);
 }
+
 .spotify-wrapper:hover::before {
     opacity: 1;
 }
@@ -500,9 +658,10 @@ body {
 
 .video-grid-item {
     position: relative;
-    padding-bottom: 56.25%; /* Rasio 16:9 */
+    padding-bottom: 56.25%;
+    /* Rasio 16:9 */
     height: 0;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     overflow: hidden;
     transition: var(--transition);
@@ -511,7 +670,7 @@ body {
 
 .video-grid-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 20px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .video-grid-item iframe {
@@ -545,22 +704,120 @@ body {
 
 /* ================= FOOTER ================= */
 footer {
-    background-color: #020202;
-    padding: 60px 20px;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.03);
+    background-color: var(--bg-lighter);
+    border-top: 1px solid rgba(46, 213, 115, 0.2);
+    padding: 60px 50px 30px;
+    margin-top: 80px;
 }
 
-footer .logo {
-    justify-content: center;
-    margin-bottom: 25px;
-    font-size: 2rem;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    margin-bottom: 40px;
 }
 
-footer p {
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.footer-tagline {
+    font-size: 0.95rem;
     color: var(--text-muted);
-    font-size: 1rem;
+    font-weight: 300;
     letter-spacing: 0.5px;
+}
+
+.footer-section h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(46, 213, 115, 0.1);
+    color: var(--accent-color);
+    transition: var(--transition);
+    font-size: 1.3rem;
+}
+
+.footer-socials a:hover {
+    background: rgba(46, 213, 115, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(46, 213, 115, 0.4);
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    display: inline-block;
+    width: fit-content;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 25px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+    }
 }
 
 /* ================= FLOATING SOCIALS ================= */
@@ -601,24 +858,35 @@ footer p {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
-    .hero-title { font-size: 4rem; }
-    .hero-subtitle { font-size: 1.3rem; }
-    .hamburger { display: flex; }
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
     .nav-links {
         position: fixed;
         left: -100%;
         top: 0;
         flex-direction: column;
-        
+
         /* 1. Tambahkan warna semi-transparan (Hitam atau Putih) */
-        background-color: rgba(0, 0, 0, 0.6); /* Hitam dengan opacity 60% */
+        background-color: rgba(0, 0, 0, 0.6);
+        /* Hitam dengan opacity 60% */
         /* ATAU jika ingin tema terang: */
-        /* background-color: rgba(255, 255, 255, 0.7); */ 
+        /* background-color: rgba(255, 255, 255, 0.7); */
 
         /* 2. Backdrop filter membuat efek kaca buram */
         backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px); /* Dukungan Safari */
-        
+        -webkit-backdrop-filter: blur(15px);
+        /* Dukungan Safari */
+
         width: 100vw;
         height: 100vh;
         text-align: center;
@@ -627,30 +895,96 @@ footer p {
         z-index: 1000;
         padding-top: 60px;
     }
-    .nav-links.active { left: 0; }
-    .nav-links li { margin: 25px 0; }
-    .nav-links li a { font-size: 1.5rem; }
-    .cta-btn { display: none; }
-    .thumbnails-container { flex-wrap: wrap; }
-    .section-title { font-size: 2.5rem; }
-    .gallery-section, .music-section, .video-section { padding: 80px 30px; }
-    #navbar { padding: 20px 30px; }
-    #navbar.scrolled { padding: 15px 30px; }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.5rem;
+    }
+
+    .cta-btn {
+        display: none;
+    }
+
+    .thumbnails-container {
+        flex-wrap: wrap;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .gallery-section, .music-section, .video-section {
+        padding: 80px 30px;
+    }
+
+    #navbar {
+        padding: 20px 30px;
+    }
+
+    #navbar.scrolled {
+        padding: 15px 30px;
+    }
 }
 
 @media (max-width: 768px) {
-    .glitch { font-size: 2.5rem; letter-spacing: 2px; }
-    .hero-title { font-size: 3rem; margin-top: 60px; letter-spacing: 3px; }
-    .hero-subtitle { font-size: 1.1rem; margin-bottom: 30px; }
-    .explore-btn { padding: 15px 30px; font-size: 1rem; }
-    .main-image-container { height: 400px; }
-    .thumb-wrapper { width: 80px; height: 55px; }
-    .cta-btn { display: none; }
-    .logo { font-size: 1.5rem; }
-    .section-title { font-size: 2rem; margin-bottom: 40px; }
-    .section-title span { font-size: 1.5rem; }
-    .video-grid-container { grid-template-columns: 1fr; }
-    
+    .glitch {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        margin-top: 60px;
+        letter-spacing: 3px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .explore-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .main-image-container {
+        height: 400px;
+    }
+
+    .thumb-wrapper {
+        width: 80px;
+        height: 55px;
+    }
+
+    .cta-btn {
+        display: none;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .section-title span {
+        font-size: 1.5rem;
+    }
+
+    .video-grid-container {
+        grid-template-columns: 1fr;
+    }
+
     .floating-socials {
         top: auto;
         bottom: 20px;
@@ -663,30 +997,103 @@ footer p {
         border: 1px solid rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
     }
-    .social-icon { background: transparent; border: none; width: 40px; height: 40px; }
-    .social-icon:hover { transform: scale(1.1) translateY(-5px); }
+
+    .social-icon {
+        background: transparent;
+        border: none;
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icon:hover {
+        transform: scale(1.1) translateY(-5px);
+    }
 }
 
 @media (max-width: 480px) {
-    .glitch { font-size: 2rem; letter-spacing: 1px; }
-    .hero-title { font-size: 2.5rem; margin-top: 70px; letter-spacing: 1px; }
-    .hero-subtitle { font-size: 1rem; margin-bottom: 30px; padding: 0 10px; }
-    .gallery-section, .music-section, .video-section { padding: 60px 20px; }
-    #navbar { padding: 15px 20px; }
-    #navbar.scrolled { padding: 10px 20px; }
-    .nav-container { justify-content: space-between; } /* Logo kiri, burger kanan */
-    .logo { font-size: 1.3rem; }
-    .section-title { font-size: 1.8rem; margin-bottom: 30px; }
-    .section-title span { font-size: 1.2rem; }
-    .main-image-container { height: 300px; }
-    .thumb-wrapper { width: 60px; height: 40px; }
-    .thumbnails-container { gap: 10px; }
-    .nav-arrow { padding: 10px 15px; font-size: 1.5rem; }
-    .video-grid-container { grid-template-columns: 1fr; gap: 20px; }
-    footer { padding: 40px 20px 80px 20px; } /* Tambah padding bawah untuk floating socials */
+    .glitch {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        margin-top: 70px;
+        letter-spacing: 1px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .gallery-section, .music-section, .video-section {
+        padding: 60px 20px;
+    }
+
+    #navbar {
+        padding: 15px 20px;
+    }
+
+    #navbar.scrolled {
+        padding: 10px 20px;
+    }
+
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    /* Logo kiri, burger kanan */
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .section-title span {
+        font-size: 1.2rem;
+    }
+
+    .main-image-container {
+        height: 300px;
+    }
+
+    .thumb-wrapper {
+        width: 60px;
+        height: 40px;
+    }
+
+    .thumbnails-container {
+        gap: 10px;
+    }
+
+    .nav-arrow {
+        padding: 10px 15px;
+        font-size: 1.5rem;
+    }
+
+    .video-grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    footer {
+        padding: 40px 20px 80px 20px;
+    }
+
+    /* Tambah padding bawah untuk floating socials */
     .floating-socials {
         bottom: 15px;
         padding: 5px 10px;
     }
-    .social-icon { width: 35px; height: 35px; font-size: 1.2rem; }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
 }
