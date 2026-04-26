@@ -423,7 +423,6 @@ body {
     font-size: 6rem;
     line-height: 1.05;
     letter-spacing: 6px;
-    text-transform: uppercase;
     margin-bottom: 25px;
     animation: fadeInDown 1s ease 1s forwards;
     opacity: 0;
