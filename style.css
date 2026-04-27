@@ -19,7 +19,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    1 scroll-behavior: smooth;
 }
 
 body {
@@ -112,7 +112,7 @@ body {
 .glitch {
     position: relative;
     font-family: var(--font-heading);
-    font-size: 4rem;
+    font-size: 18rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--text-main);
