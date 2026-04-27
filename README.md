@@ -1,55 +1,57 @@
-# Avocado Sandwich | Official Band Website
+# Avocado Sandwich - Official Band Website
 
-## Fitur Utama
+Avocado Sandwich is a Midwest Emo / Math Rock band. This is the official website showcasing the band's music, gallery, and band member profiles.
 
-1. **Glitch Preloader**
-   Preloader CSS tingkat lanjut yang menampilkan animasi glitch gaya layar CRT dan efek pemisahan warna RGB (red/blue) menggunakan teknik modern clip-path.
+## Features
 
-2. **Desain Visual Responsif**
-   Antarmuka bertema gelap (*dark mode*) dengan aksen warna yang kontras, dioptimalkan untuk memberikan dampak visual tinggi di berbagai ukuran layar perangkat.
+- Responsive dark-themed design with green accent colors
+- Smooth preloader animation with glitch effects
+- Spotify track player integration
+- YouTube video embedding
+- Interactive image gallery with smooth transitions
+- Band member profiles with photos
+- Mobile-friendly navigation with hamburger menu
+- Social media links (Instagram, TikTok, YouTube)
 
-3. **Navigasi Multi-Platform**
-   Bilah navigasi berbasis *glassmorphism* yang menempel (sticky) dan bertransisi secara halus saat digulir, dilengkapi dengan menu hamburger khusus untuk aksesibilitas perangkat seluler.
+## Pages
 
-4. **Integrasi Media**
-   * **Spotify:** Pemutar lagu bawaan untuk akses langsung ke karya lagu terbaru tanpa harus meninggalkan situs.
-   * **YouTube:** Grid video responsif yang tertata rapi untuk pemutaran video musik berkualitas tinggi di perangkat manapun.
+- index.html - Main homepage with music, video, and gallery sections
+- profile.html - Band information, member profiles, and discography
 
-5. **Galeri Foto Interaktif**
-   Galeri gambar kustom menggunakan JavaScript murni (vanilla) untuk memastikan transisi yang ringan dan halus serta pemuatan gambar yang optimal.
+## Tech Stack
 
-## Teknologi (Tech Stack)
+- HTML5 for semantic markup
+- CSS3 for styling, animations, and responsive design
+- Vanilla JavaScript for interactive features
+- Google Fonts (Oswald, Poppins)
+- Font Awesome icons
 
-Proyek ini dibuat menggunakan teknologi web murni untuk memastikan performa yang cepat dan beban yang ringan:
-- HTML5 (Semantik dan optimasi SEO)
-- CSS3 (Custom properties, animasi keyframe, Flexbox, dan Grid)
-- Vanilla JavaScript (Modern ES6+ untuk seluruh interaksi dinamis)
+## Project Structure
 
-## Memulai (Getting Started)
-
-Sebagai proyek berbasis native HTML, tidak diperlukan dependensi eksternal atau alat bantu pengembangan tambahan.
-
-1. Salin atau unduh repositori ini.
-2. Buka file `index.html` menggunakan peramban web modern manapun.
-
-Untuk pengalaman pengembangan terbaik, disarankan menggunakan server lokal (seperti ekstensi Live Server pada VS Code).
-
-## Struktur Proyek
-
-```text
+```
 alpukado-web/
 ├── assets/
-│   ├── gallery/ (Aset fotografi band)
-│   ├── favicon.png (Ikon situs)
-│   └── fotoband.png (Latar belakang utama hero section)
-├── index.html (Halaman utama)
-├── style.css (Kode lengkap styling dan animasi)
-└── script.js (Logika interaktif dan fungsionalitas galeri)
+│   ├── gallery/        (Gallery images)
+│   ├── team/           (Band member photos)
+│   ├── fonts/          (Custom fonts)
+│   ├── favicon.png
+│   └── logo.png
+├── index.html          (Main page)
+├── profile.html        (Band profile page)
+├── style.css           (Styling and animations)
+├── script.js           (Interactive features)
+└── README.md
 ```
 
-## Kustomisasi Tema
+## Getting Started
 
-Untuk mengubah skema warna utama atau variabel desain, Anda dapat memperbarui bagian `:root` di dalam file `style.css`:
+1. Clone or download this repository
+2. Open index.html in a modern web browser
+3. For development, use a local server (e.g., Live Server in VS Code)
+
+## Customization
+
+To change the color scheme, edit the CSS variables in the `:root` section of style.css:
 
 ```css
 :root {
@@ -59,5 +61,6 @@ Untuk mengubah skema warna utama atau variabel desain, Anda dapat memperbarui ba
 }
 ```
 
----
-Portofolio Proyek Resmi Avocado Sandwich.
+## License
+
+Copyright 2026 Avocado Sandwich. All rights reserved.
