@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'assets/gallery/gallery2.jpeg',
         'assets/gallery/gallery3.jpeg',
         'assets/gallery/gallery4.jpeg',
-        'assets/gallery/gallery5.JPG'
     ];
 
     let currentImgIndex = 0;
