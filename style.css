@@ -398,8 +398,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Menggunakan aset gambar fotoband pengguna */
-    background: url('assets/atap.JPG') no-repeat center center/cover;
+    /* Menggunakan aset gambar gallery3 dari folder gallery */
+    background: url('assets/gallery/gallery3.jpeg') no-repeat center center/cover;
 }
 
 .hero-overlay {

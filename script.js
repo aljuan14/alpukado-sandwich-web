@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
     // 4. INTERACTIVE GALLERY LOGIC
     // ----------------------------------------------------
-    // Daftar gambar placeholder berkualitas tinggi dari Unsplash untuk suasana konser
+    // Daftar gambar dari folder gallery yang sudah di-update
     const galleryImages = [
-        'assets/gallery/gallery5.JPG', // Main
-        'assets/gallery/gallery6.JPG', // Stage
-        'assets/gallery/gallery7.JPG', // Guitar
-        'assets/gallery/gallery 1.JPG', // Singer
-        'assets/gallery/gallery 4.jpeg'  // Drums
+        'assets/gallery/gallery1.jpeg',
+        'assets/gallery/gallery2.jpeg',
+        'assets/gallery/gallery3.jpeg',
+        'assets/gallery/gallery4.jpeg',
+        'assets/gallery/gallery5.JPG'
     ];
 
     let currentImgIndex = 0;
