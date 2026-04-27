@@ -112,12 +112,15 @@ body {
 .glitch {
     position: relative;
     font-family: var(--font-heading);
-    font-size: 18rem;
+    font-size: clamp(3rem, 18vw, 12rem);
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--text-main);
     line-height: 1;
     animation: simpleGlitch 3s ease-in-out infinite;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
 }
 
 @keyframes simpleGlitch {
@@ -1148,22 +1151,25 @@ footer {
 
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 60px;
-    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .member-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     text-align: center;
+    padding: 0;
 }
 
 .member-image {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     overflow: hidden;
     background: rgba(46, 213, 115, 0.1);
@@ -1171,12 +1177,13 @@ footer {
     align-items: center;
     justify-content: center;
     border: 2px solid rgba(46, 213, 115, 0.3);
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
-.member-image:hover {
+.member-card:hover .member-image {
     border-color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(46, 213, 115, 0.3);
+    box-shadow: 0 10px 30px rgba(46, 213, 115, 0.3);
+    transform: scale(1.08);
 }
 
 .member-image img {
