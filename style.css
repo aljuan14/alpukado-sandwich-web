@@ -3,7 +3,7 @@
     --bg-color: #050505;
     --bg-lighter: #0a0a0a;
     --text-main: #ffffff;
-    --text-muted: #9b9696;
+    --text-muted: #e3dbdb;
     --accent-color: #2ed573;
     /* Merah cerah untuk call to action */
     --accent-hover: #7bed9f;
@@ -1094,5 +1094,229 @@ footer {
         width: 35px;
         height: 35px;
         font-size: 1.2rem;
+    }
+}
+
+/* ================= PROFILE PAGE ================= */
+.about-section {
+    padding: 100px 50px;
+    background-color: var(--bg-color);
+    margin-top: 60px;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-section .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 3.5rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    text-align: justify;
+    font-weight: 300;
+}
+
+/* Band Members Section */
+.band-members-section {
+    padding: 100px 50px;
+    background-color: var(--bg-lighter);
+}
+
+.band-members-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.band-members-section .section-title {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 3.5rem;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 60px;
+    justify-items: center;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(46, 213, 115, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(46, 213, 115, 0.3);
+    transition: var(--transition);
+}
+
+.member-image:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.3);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+}
+
+.member-role {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+/* Discography Section */
+.discography-section {
+    padding: 100px 50px;
+    background-color: var(--bg-color);
+}
+
+.discography-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.discography-section .section-title {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 3.5rem;
+}
+
+.discography-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    justify-items: center;
+}
+
+.album-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+}
+
+.album-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(46, 213, 115, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(46, 213, 115, 0.2);
+    transition: var(--transition);
+}
+
+.album-card:hover .album-image {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.3);
+}
+
+.album-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+}
+
+.album-year {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+/* Responsive Profile Page */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 25px;
+    }
+
+    .band-members-section {
+        padding: 60px 25px;
+    }
+
+    .discography-section {
+        padding: 60px 25px;
+    }
+
+    .about-section .section-title,
+    .band-members-section .section-title,
+    .discography-section .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .members-grid {
+        gap: 40px;
+    }
+
+    .member-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .member-name {
+        font-size: 1.3rem;
+    }
+
+    .album-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        text-align: left;
     }
 }
